@@ -1,0 +1,34 @@
+stages:
+  - dockerize
+  - deploy
+
+#DOCKERIZING
+
+dockerize_angular:
+  stage: dockerize
+  image: docker
+  variables:
+    GIT_STRATEGY: clone
+    DOCKER_DRIVER: overlay2
+  services:
+    - docker:dind
+  script:
+    - docker build -t landing .
+  after_script:
+    - docker login --username=$DOCKER_USER --password=$DOCKER_PASSWD
+    - docker tag landing $DOCKER_USER/landing
+    - docker push $DOCKER_USER/landing
+
+# DEPLOYING
+
+deploy:
+  stage: deploy
+  image: ictu/sshpass
+  variables:
+    GIT_STRATEGY: clone
+  dependencies:
+    - dockerize_angular
+  script:
+    - sshpass -p "$SDAL_PASSWD" ssh -oStrictHostKeyChecking=no root@95.216.188.201 docker pull almosvirog/landing
+    - sshpass -p "$SDAL_PASSWD" ssh -oStrictHostKeyChecking=no root@95.216.188.201 docker rm -f landing || true
+    - sshpass -p "$SDAL_PASSWD" ssh -oStrictHostKeyChecking=no root@95.216.188.201 docker run -d -p 3333:80 --name landing almosvirog/landing
