@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    min-height: 100%;
     background: linear-gradient(#6212e5, #921de9);
     font-family: "Open Sans", sans-serif;
     color: white;
@@ -17,7 +18,7 @@ h5 {
 
 h1 {
     margin: 0;
-    font-size: 120px;
+    font-size: 80px;
     text-shadow: 0 4px #de00ce;
 }
 
@@ -30,7 +31,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background: linear-gradient(90deg, #6212e5ee, #921de9ee),
+    background: linear-gradient(#6212e522, #921de9ff),
         url("https://steamuserimages-a.akamaihd.net/ugc/963112429819482496/4423487C33631D6CA64AD6F855E9283A9CF444C8/");
     background-position: center;
     background-size: cover;
@@ -40,8 +41,24 @@ body {
     background: linear-gradient(90deg, #6212e5, #921de9);
     box-shadow: 0 10px 20px #6212e5;
     padding: 6vw;
+    /* max-height: 100%; */
+    max-width: 600px;
 }
 
 a {
-    color: rgb(0, 183, 255);
+    color: rgba(255, 7, 234, 0.849);
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.person {
+    width: 49%;
+}
+@media (max-width: 600px) {
+    .person {
+        width: 100%;
+    }
 }
