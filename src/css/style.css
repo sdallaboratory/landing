@@ -1,10 +1,21 @@
-html,
+html {
+    /* height: 100%; */
+    min-height: 100%;
+}
 body {
-    height: 100%;
     min-height: 100%;
     background: linear-gradient(#6212e5, #921de9);
     font-family: "Open Sans", sans-serif;
     color: white;
+    background: linear-gradient(#6212e522, #921de9ff),
+        url("https://steamuserimages-a.akamaihd.net/ugc/963112429819482496/4423487C33631D6CA64AD6F855E9283A9CF444C8/");
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 h1,
@@ -26,15 +37,8 @@ h2 {
     font-weight: 100;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background: linear-gradient(#6212e522, #921de9ff),
-        url("https://steamuserimages-a.akamaihd.net/ugc/963112429819482496/4423487C33631D6CA64AD6F855E9283A9CF444C8/");
-    background-position: center;
-    background-size: cover;
+a {
+    color: rgba(255, 7, 234, 0.849);
 }
 
 .card {
@@ -45,10 +49,6 @@ body {
     max-width: 600px;
 }
 
-a {
-    color: rgba(255, 7, 234, 0.849);
-}
-
 .contacts {
     display: flex;
     flex-wrap: wrap;
@@ -57,6 +57,7 @@ a {
 .person {
     width: 49%;
 }
+
 @media (max-width: 600px) {
     .person {
         width: 100%;
