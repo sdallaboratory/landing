@@ -57,9 +57,16 @@ a {
 .person {
     width: 49%;
 }
+.person img {
+    height: 50px;
+}
 
 @media (max-width: 600px) {
     .person {
         width: 100%;
     }
+}
+
+a {
+    word-break: break-all;
 }
