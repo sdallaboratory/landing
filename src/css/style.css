@@ -7,7 +7,7 @@ body {
     background: linear-gradient(#6212e5, #921de9);
     font-family: "Open Sans", sans-serif;
     color: white;
-    background: linear-gradient(#6212e522, #921de9ff), url("img/bg.gif");
+    background: linear-gradient(#6212e522, #921de9ff), url("/img/bg.gif");
     background-position: center;
     background-size: cover;
 
