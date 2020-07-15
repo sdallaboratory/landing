@@ -213,9 +213,9 @@ h3 {
     transform: translateX(-50px);
 }
 
-.contacts {
-    display: flex;
-    flex-wrap: wrap;
+#contacts .material-icons {
+    transform: translateY(5px);
+    margin-right: 10px;
 }
 
 /* TEAM */
