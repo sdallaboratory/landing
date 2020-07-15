@@ -6,12 +6,20 @@
     --accent: #00ffd1;
 
     --radius: 25px;
+    --indent: 50px;
 }
 
 :root .invert {
     --bg: #ffffff;
     --text: #131313;
     --contrast: #000000;
+}
+
+@media (max-width: 700px) {
+    :root {
+        --indent: 20px;
+        --radius: 10px;
+    }
 }
 
 html {
@@ -63,6 +71,12 @@ h3 {
     padding: 0 10%;
 }
 
+@media (max-width: 700px) {
+    .container {
+        padding: 15px;
+    }
+}
+
 #hello {
     position: relative;
     overflow: hidden;
@@ -109,6 +123,16 @@ h3 {
     width: 30%;
 }
 
+@media (max-width: 700px) {
+    .plates {
+        flex-direction: column;
+    }
+
+    #products .plate {
+        width: 100%;
+    }
+}
+
 .plates {
     display: flex;
     justify-content: space-between;
@@ -118,6 +142,7 @@ h3 {
     font-size: 100px;
 }
 
+/* CASES */
 #cases {
 }
 
@@ -145,7 +170,7 @@ h3 {
     overflow: hidden;
     background-color: var(--contrast);
     border-radius: var(--radius);
-    padding: 50px;
+    padding: var(--indent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,7 +188,7 @@ h3 {
 .card .card-content {
     position: absolute;
     bottom: -50px;
-    left: -100px;
+    left: calc(var(--indent) * -2);
     width: 270px;
 }
 .card .card-content hr {
@@ -181,6 +206,22 @@ h3 {
 }
 
 /* TEAM */
+.people {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--indent);
+}
+
+@media (max-width: 1200px) {
+    .people {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 700px) {
+    .people {
+        grid-template-columns: 1fr;
+    }
+}
 
 .person img {
     width: 200px;
@@ -189,6 +230,9 @@ h3 {
     object-position: top;
 }
 
+#contacts h3 {
+    font-weight: lighter;
+}
 #contacts a {
     font-weight: bold;
     color: var(--accent);
