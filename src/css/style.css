@@ -191,6 +191,19 @@ h3 {
     left: calc(var(--indent) * -2);
     width: 270px;
 }
+
+@media (max-width: 1200px) {
+    .card {
+        margin: 0;
+        margin-bottom: 200px;
+    }
+    .card .card-content {
+        bottom: unset;
+        top: 95%;
+        left: 10px;
+    }
+}
+
 .card .card-content hr {
     border: 1px solid var(--accent);
     transition: 0.3s ease-in-out;

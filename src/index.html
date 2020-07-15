@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <meta property="og:title" content="Цифровая лаборатория SDAL">
     <meta property="og:url" content="https://sdal.pw">
@@ -29,22 +30,27 @@
         <div class="overlay gradient"></div>
         <img src="img/photos/car.png" class="overlay car" alt="">
         <div class="container hello-container">
-            <div class="hello-text" class="animate__fadeInLeft">
+            <div data-aos="fade-down" data-aos-delay="300" class="hello-text" class="animate__fadeInLeft">
                 Привет! Мы —
                 <br><b>цифровая лаборатория 🔥</b><br>
             </div>
-            <img src="img/logo/logo-white.svg" class="animate__fadeInLeft" style="  --animate-delay: 2s;" alt="">
-            <p>Поможем продумать, спроектируем, задизайним и реализуем приложение для внутренних нужд компании или для
+            <img data-aos="fade-right" src="img/logo/logo-white.svg" class="animate__fadeInLeft"
+                style="  --animate-delay: 2s;" alt="">
+            <p data-aos="fade-up" data-aos-delay="700">Поможем продумать, спроектируем, задизайним и реализуем
+                приложение для внутренних нужд компании или для
                 клиентов. Сделаем его быстрым удобным и привлекательным для пользователей.</p>
         </div>
     </header>
     <section id="products" class="products">
         <div class="container">
 
-            <h2>Что мы умеем</h2>
+            <h2 data-aos="fade-right">Что мы умеем</h2>
+            <p>
+                Мы умеем и любим реализовывать проекты на стыке дизайна, аналитики и веб-технологий.
+            </p>
 
             <div class="plates">
-                <div class="plate">
+                <div class="plate" data-aos="zoom-in" data-aos-delay="0">
                     <i class="material-icons plate-icon shadow">code</i>
                     <h3>Разработка сайтов и веб-приложений</h3>
                     <p>
@@ -53,7 +59,7 @@
                         Развернём и добавим сервисы аналитики. <br><br>
                     </p>
                 </div>
-                <div class="plate">
+                <div class="plate" data-aos="zoom-in" data-aos-delay="100">
                     <i class="material-icons plate-icon shadow">design_services</i>
                     <h3>Дизайн и брендинг</h3>
                     <p>
@@ -62,7 +68,7 @@
                         Нарисуем логотип или иллюстрации для вашего продукта. <br><br>
                     </p>
                 </div>
-                <div class="plate">
+                <div class="plate" data-aos="zoom-in" data-aos-delay="200">
                     <i class="material-icons plate-icon shadow">insert_chart_outlined</i>
                     <h3>Аналитика СМИ и Социальных Сетей</h3>
                     <p>
@@ -80,14 +86,17 @@
     </section>
     <section class="cases" id="cases">
         <div class="container">
-            <h2>Наши кейсы</h2>
+            <h2 data-aos="fade-right">Наши кейсы</h2>
+
+            <p>За посдедние три года, мы успели реализовать немалое числов проектов для российских вузов и частных
+                заказчиков.</p>
 
             <a class="card" target="_blank" href="https://sdal.pw/touch/">
                 <div class="card-bg">
                     <img src="img/touch-logo.svg">
                 </div>
                 <div class="card-shadow"></div>
-                <div class="card-content">
+                <div class="card-content" data-aos="fade-right">
                     <h3>
                         Touch
                     </h3>
@@ -102,7 +111,7 @@
                     <img src="img/pkdd-logo.png" height="200"><br>
                 </div>
                 <div class="card-shadow"></div>
-                <div class="card-content">
+                <div class="card-content" data-aos="fade-left">
                     <h3>
                         ПКДД
                     </h3>
@@ -116,7 +125,7 @@
                     <img src="img/shileld.png" alt=""><br>
                 </div>
                 <div class="card-shadow"></div>
-                <div class="card-content">
+                <div class="card-content" data-aos="fade-right">
                     <h3>
                         Абитуриент МГТУ
                     </h3>
@@ -130,7 +139,7 @@
                     <img src="img/compass.svg"><br>
                 </div>
                 <div class="card-shadow"></div>
-                <div class="card-content">
+                <div class="card-content" data-aos="fade-left">
                     <h3>
                         Compass МГТУ
                     </h3>
@@ -145,7 +154,7 @@
                         height="150px"><br>
                 </div>
                 <div class="card-shadow"></div>
-                <div class="card-content">
+                <div class="card-content" data-aos="fade-right">
                     <h3>
                         Бауман Граф
                     </h3>
@@ -162,7 +171,7 @@
                         height="200px"><br>
                 </div>
                 <div class="card-shadow"></div>
-                <div class="card-content">
+                <div class="card-content" data-aos="fade-left">
                     <h3>
                         Vessel
                     </h3>
@@ -174,14 +183,18 @@
     <section class="invert" id="team">
         <div class="container">
 
-            <h2>
+            <h2 data-aos="fade-right">
                 Ключевая команда SDAL </h2>
 
-            <p>Ваш заказ будет делать команда мололдых специалистов с высшим образованием и стажем работы по
+            <p data-aos="fade-right">Ваш заказ будет делать слаженная команда мололдых специалистов, выпусников МГТУ
+                Баумана и
+                Московского Политеха, с
+                трехлетним стажем
+                работы по
                 спецаильности.</p>
             <div class="people">
 
-                <div class="person">
+                <div class="person" data-aos="flip-left" data-aos-delay="0">
                     <h3>Сергей Соловьев</h3>
                     <img src="img/photos/people/sergsol.jpg" alt="">
                     <p>Веб-дизайн и веб-разработка, аналитика</p>
@@ -189,14 +202,14 @@
                     <!-- <a href="mailto:sergey.soloviev@inbox.ru">sergey.soloviev@inbox.ru</a><br> -->
                 </div>
 
-                <div class="person">
+                <div class="person" data-aos="flip-left" data-aos-delay="100">
                     <h3>Илья Бондарь</h3>
                     <img src="img/photos/people/ilya.jpg" alt="">
                     <p>Дизайн, иллюстрация</p>
                     <!-- <a href="https://vk.com/ilya_bondar">https://vk.com/ilya_bondar</a> -->
                     <!-- <a href="mailto:ilbond340@gmail.com">ilbond340@gmail.com</a><br> -->
                 </div>
-                <div class="person">
+                <div class="person" data-aos="flip-left" data-aos-delay="200">
                     <h3>Сергей Гончаров</h3>
                     <img src="img/photos/people/sergeo.jpg" alt="">
                     <p>QA, Документация, финансы, PR</p>
@@ -204,7 +217,7 @@
                     <!-- <a href="mailto:stts11@bk.ru">stts11@bk.ru</a> -->
                 </div>
 
-                <div class="person">
+                <div class="person" data-aos="flip-left" data-aos-delay="400">
                     <h3>Роман Батин</h3>
                     <img src="img/photos/people/zar.jpg" alt="">
                     <p>Веб-разработка, DevOps, ML/AI</p>
@@ -223,7 +236,7 @@
     </section>
     <footer id="contacts">
         <div class="container">
-            <h2>
+            <h2 data-aos="fade-right">
                 Закажите разработку у нас
             </h2>
             <p>
@@ -231,16 +244,17 @@
                 техническую консультацию.
             </p>
             <div class="person">
-                <h3>
+                <h3 data-aos="fde-up" data-aos-delay="0">
                     Напишите <a href="mailto:sdallabs@yandex.ru">sdallabs@yandex.ru</a>
                 </h3>
-                <h3>
+                <h3 data-aos="fde-up" data-aos-delay="100">
                     Позвоните <a href="tel:+79164806068">+7 (916) 480-60-68</a>
                 </h3>
-                <h3>
+                <h3 data-aos="fde-up" data-aos-delay="200">
                     Напишите в Телеграме <a href="https://ttttt.me/starit19">@starit19</a>
                 </h3>
             </div>
+            <div>&copy; SDAL 2020</div>
         </div>
     </footer>
 
@@ -251,6 +265,14 @@
                 perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </div> -->
 
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+        });
+    </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140794865-3"></script>
     <script>
@@ -260,6 +282,7 @@
 
         gtag('config', 'UA-140794865-3');
     </script>
+
 
 </body>
 
