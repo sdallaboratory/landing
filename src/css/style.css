@@ -154,7 +154,8 @@ h3 {
 #hello .overlay.gradient {
     mix-blend-mode: screen;
     width: 80%;
-    opacity: 0.5;
+    opacity: 0.3;
+    filter: blur(10px);
     background: radial-gradient(var(--accent), #00ffd100 60%);
 }
 
