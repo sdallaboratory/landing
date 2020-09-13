@@ -250,7 +250,7 @@ h3 {
     transform: scale(0.97);
 }
 
-.card:nth-last-of-type(odd) {
+.card:nth-last-of-type(even) {
     margin-left: auto;
 }
 
