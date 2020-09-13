@@ -105,6 +105,34 @@ h3 {
     }
 }
 
+/* SCROLLBAR */
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--contrast);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--accent);
+}
+
+/* HELLO */
+
 #hello {
     position: relative;
     overflow: hidden;
@@ -119,7 +147,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .hello-container .actions {
@@ -167,6 +195,14 @@ h3 {
 
 .hello-text {
     font-size: 24px;
+}
+
+#hello .scroll-down a {
+    display: flex;
+    align-items: center;
+    color: white !important;
+    padding: 30px;
+    transform: translateX(-25px);
 }
 
 /* PRODUCTS */
