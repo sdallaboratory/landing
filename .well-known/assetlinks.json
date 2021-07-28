@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "io.ridenow.passenger",
+    "sha256_cert_fingerprints":
+    ["81:1C:D4:0A:19:8F:E3:48:AC:7B:0D:8D:BB:1F:1D:D2:36:63:DD:6B:E4:0D:FA:D6:3F:0F:96:93:9F:D3:4A:3A"]
+  }
+}]
