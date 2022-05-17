@@ -1,42 +1,37 @@
+variables:
+  APP_NAME: sdal-proxy
+  APP_PORT: 80
+  DEPLOY_PUBLIC_PORT: 8010
+  DEPLOY_NETWORK_NAME: proxy
+  DOCKER_IMAGE_NAME: $DOCKER_ORGANIZATION/$APP_NAME
+  DOCKER_DRIVER: overlay2
+  GIT_STRATEGY: clone
+
 stages:
-  - dockerize
+  - publish
   - deploy
 
-#DOCKERIZING
-
-dockerize_angular:
-  stage: dockerize
+publish:
+  stage: publish
   image: docker
-  variables:
-    GIT_STRATEGY: clone
-    DOCKER_DRIVER: overlay2
   services:
     - docker:dind
-
-  only:
-    - master
-
   script:
-    - docker build -t landing .
+    - docker build -t $DOCKER_IMAGE_NAME .
   after_script:
-    - docker login --username=$DOCKER_USER --password=$DOCKER_PASSWD
-    - docker tag landing $DOCKER_USER/landing
-    - docker push $DOCKER_USER/landing
+    - docker login --username=$DOCKER_USER --password=$DOCKER_TOKEN
+    - docker push $DOCKER_IMAGE_NAME
 
-# DEPLOYING
+# DEPLOY
 
 deploy:
   stage: deploy
   image: ictu/sshpass
-  variables:
-    GIT_STRATEGY: clone
-  dependencies:
-    - dockerize_angular
-
-  only:
-    - master
-
+  needs:
+    - publish
+  before_script:
+    - alias ssh-pass-server='sshpass -p "$SDAL_DEFAULT_PASSWORD" ssh -oStrictHostKeyChecking=no $SDAL_DEFAULT_USERNAME@$SDAL_DEFAULT_IP'
   script:
-    - sshpass -p "$SDAL_PASSWD" ssh -oStrictHostKeyChecking=no root@95.216.188.201 docker pull almosvirog/landing
-    - sshpass -p "$SDAL_PASSWD" ssh -oStrictHostKeyChecking=no root@95.216.188.201 docker rm -f landing || true
-    - sshpass -p "$SDAL_PASSWD" ssh -oStrictHostKeyChecking=no root@95.216.188.201 docker run -d -p 3333:80 --name landing almosvirog/landing
+    - ssh-pass-server docker pull $DOCKER_IMAGE_NAME
+    - ssh-pass-server docker rm -f $APP_NAME || true
+    - ssh-pass-server docker run -d -p $DEPLOY_PUBLIC_PORT:$APP_PORT --network=$DEPLOY_NETWORK_NAME --name $APP_NAME $DOCKER_IMAGE_NAME
